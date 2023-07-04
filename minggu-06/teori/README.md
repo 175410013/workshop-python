@@ -1,8 +1,8 @@
-Errors and Exceptions
-Until now error messages haven’t been more than mentioned, but if you have tried out the examples you have probably seen some. There are (at least) two distinguishable kinds of errors: syntax errors and exceptions.
+8. Kesalahan dan Pengecualian 
+Sampai saat ini pesan kesalahan belum banyak disebutkan, tetapi jika Anda telah mencoba contoh-contohnya, Anda mungkin telah melihat beberapa. Ada (setidaknya) dua jenis kesalahan yang dapat dibedakan: kesalahan sintaks dan pengecualian .
 
-8.1. Syntax Errors
-Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:
+8.1. Kesalahan Sintaks 
+Kesalahan sintaksis, juga dikenal sebagai kesalahan parsing, mungkin merupakan jenis keluhan paling umum yang Anda dapatkan saat masih mempelajari Python:
 
 >>>
 while True print('Hello world')
@@ -10,10 +10,10 @@ while True print('Hello world')
     while True print('Hello world')
                    ^
 SyntaxError: invalid syntax
-The parser repeats the offending line and displays a little ‘arrow’ pointing at the earliest point in the line where the error was detected. The error is caused by (or at least detected at) the token preceding the arrow: in the example, the error is detected at the function print(), since a colon (':') is missing before it. File name and line number are printed so you know where to look in case the input came from a script.
+Parser mengulangi baris yang menyinggung dan menampilkan 'panah' kecil yang menunjuk ke titik paling awal di baris tempat kesalahan terdeteksi. Kesalahan disebabkan oleh (atau setidaknya terdeteksi pada) token yang mendahului tanda panah: dalam contoh, kesalahan terdeteksi pada fungsi print(), karena titik dua ( ':') tidak ada sebelumnya. Nama file dan nomor baris dicetak sehingga Anda tahu ke mana harus mencari jika input berasal dari skrip.
 
-8.2. Exceptions
-Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions and are not unconditionally fatal: you will soon learn how to handle them in Python programs. Most exceptions are not handled by programs, however, and result in error messages as shown here:
+8.2. Pengecualian 
+Bahkan jika sebuah pernyataan atau ekspresi benar secara sintaksis, itu dapat menyebabkan kesalahan ketika upaya dilakukan untuk mengeksekusinya. Kesalahan yang terdeteksi selama eksekusi disebut pengecualian dan tidak fatal tanpa syarat: Anda akan segera belajar cara menanganinya dalam program Python. Namun, sebagian besar pengecualian tidak ditangani oleh program, dan menghasilkan pesan kesalahan seperti yang ditampilkan di sini:
 
 >>>
 10 * (1/0)
@@ -28,11 +28,11 @@ NameError: name 'spam' is not defined
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: can only concatenate str (not "int") to str
-The last line of the error message indicates what happened. Exceptions come in different types, and the type is printed as part of the message: the types in the example are ZeroDivisionError, NameError and TypeError. The string printed as the exception type is the name of the built-in exception that occurred. This is true for all built-in exceptions, but need not be true for user-defined exceptions (although it is a useful convention). Standard exception names are built-in identifiers (not reserved keywords).
+Baris terakhir dari pesan kesalahan menunjukkan apa yang terjadi. Pengecualian datang dalam berbagai jenis, dan jenisnya dicetak sebagai bagian dari pesan: jenis dalam contoh adalah ZeroDivisionError, NameErrordan TypeError. String yang dicetak sebagai tipe pengecualian adalah nama dari pengecualian bawaan yang terjadi. Ini berlaku untuk semua pengecualian bawaan, tetapi tidak harus benar untuk pengecualian yang ditentukan pengguna (walaupun ini adalah konvensi yang berguna). Nama pengecualian standar adalah pengidentifikasi bawaan (bukan kata kunci yang dicadangkan).
 
-The rest of the line provides detail based on the type of exception and what caused it.
+Baris selanjutnya memberikan detail berdasarkan jenis pengecualian dan apa yang menyebabkannya.
 
-The preceding part of the error message shows the context where the exception occurred, in the form of a stack traceback. In general it contains a stack traceback listing source lines; however, it will not display lines read from standard input.
+Bagian sebelumnya dari pesan kesalahan menunjukkan konteks di mana pengecualian terjadi, dalam bentuk stack traceback. Secara umum ini berisi baris sumber daftar traceback stack; namun, ini tidak akan menampilkan baris yang dibaca dari input standar.
 
 Pengecualian Bawaan mencantumkan pengecualian bawaan dan artinya.
 
@@ -61,4 +61,4 @@ Pernyataan trymungkin memiliki lebih dari satu kecuali klausa , untuk menentukan
 
 ... except (RuntimeError, TypeError, NameError):
 ...     pass
-Kelas dalam exceptklausa kompatibel dengan pengecualian jika itu adalah kelas yang sama atau kelas dasar daripadanya (tetapi bukan sebaliknya — klausa pengecualian yang mencantumkan kelas turunan tidak kompatibel dengan kelas dasar). Misalnya, kode berikut akan mencetak B, C, D dalam urutan tersebut:
+Kelas dalam exceptklausa kompatibel dengan pengecualian jika itu adalah kelas yang sama atau kelas dasar daripadanya (tetapi bukan sebaliknya — klausa pengecualian yang mencantumkan kelas turunan tidak kompatibel dengan kelas dasar).
